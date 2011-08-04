@@ -23,3 +23,18 @@
 <br />
 
 <%= link_to 'New Message', new_message_path %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Text</th>
+  </tr>
+
+<% unless @result.nil? %>
+  <tr>
+    <td><%= @result.name %></td>
+    <td><%= @result.text %></td>
+  </tr>
+<% end %>
+</table>
+
