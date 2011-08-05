@@ -1,0 +1,973 @@
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (78.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (78.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateMessages (20110802073713)
+  [1m[36mSQL (0.0ms)[0m  [1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "text" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110802073713')
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("messages")
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/messages" for 127.0.0.1 at Tue Aug 02 16:38:13 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+Rendered messages/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 109ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at Tue Aug 02 16:38:21 +0900 2011
+  Processing by MessagesController#new as HTML
+Rendered messages/_form.html.erb (15.6ms)
+Rendered messages/new.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 62ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/messages" for 127.0.0.1 at Tue Aug 02 16:38:27 +0900 2011
+  Processing by MessagesController#create as HTML
+  Parameters: {"commit"=>"Create Message", "authenticity_token"=>"U9rjFY0nw9KLkiveZf5ywA7OWe6MYJgISFuyR2EjjXw=", "utf8"=>"‚úì", "message"=>{"name"=>"aaa", "text"=>"bbb"}}
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "messages" ("name", "created_at", "text", "updated_at") VALUES ('aaa', '2011-08-02 07:38:27.296875', 'bbb', '2011-08-02 07:38:27.296875')[0m
+Redirected to http://localhost:3000/messages/1
+Completed 302 Found in 109ms
+
+
+Started GET "/messages/1" for 127.0.0.1 at Tue Aug 02 16:38:27 +0900 2011
+  Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMessage Load (0.0ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."id" = 1 LIMIT 1
+Rendered messages/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/messages/1" for 127.0.0.1 at Tue Aug 02 16:57:06 +0900 2011
+  Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."id" = 1 LIMIT 1
+Rendered messages/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 78ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/messages" for 127.0.0.1 at Wed Aug 03 10:15:06 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+Rendered messages/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 172ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/messages" for 127.0.0.1 at Wed Aug 03 10:17:18 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+Rendered messages/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 94ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (15.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateMessages (20110802073713)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("messages")
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/messages" for 127.0.0.1 at Thu Aug 04 18:57:31 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (15.6ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."name" = 'ñÉê∂%' LIMIT 1[0m
+ERROR: compiling _app_views_messages_index_html_erb__867076443_38244924_0 RAISED compile error
+c:/Sites/message-board/app/views/messages/index.html.erb:42: syntax error, unexpected '\n', expecting tASSOC
+c:/Sites/message-board/app/views/messages/index.html.erb:49: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _app_views_messages_index_html_erb__867076443_38244924_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "messages/index";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Listing messages</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+');@output_buffer.append_if_string=  @messages.each do |message| 
+@output_buffer.safe_concat('  <tr>
+    <td>');@output_buffer.append= ( message.name );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( message.text );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( link_to 'Show', message );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( link_to 'Edit', edit_message_path(message) );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete );@output_buffer.safe_concat('</td>
+  </tr>
+'); end 
+@output_buffer.safe_concat('</table>
+
+<br />
+
+');@output_buffer.append= ( link_to 'New Message', new_message_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+  <tr>
+    <td>');@output_buffer.append= ( @result.name );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( @result.text );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( link_to 'Show', @result );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( link_to 'Edit', edit_message_path(@result) );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( link_to 'Destroy', @result, :confirm => 'Are you sure?', :method
+=> :delete );@output_buffer.safe_concat('</td>
+  </tr>
+'); end 
+@output_buffer.safe_concat('</table>
+
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: c:/Sites/message-board/app/views/messages/index.html.erb:49:in `compile'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `_render_template'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+c:/Sites/message-board/app/controllers/messages_controller.rb:7:in `index'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `process_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:436:in `_run__912406087__process_action__199225275__callbacks'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `send'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `send'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `synchronize'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:77:in `send'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:13:in `run'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/server.rb:217:in `start'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/commands/server.rb:65:in `start'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:30
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:27:in `tap'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered messages/index.html.erb within layouts/application (15.6ms)
+Completed 500 Internal Server Error in 297ms
+
+ActionView::Template::Error (compile error
+c:/Sites/message-board/app/views/messages/index.html.erb:42: syntax error, unexpected '\n', expecting tASSOC
+c:/Sites/message-board/app/views/messages/index.html.erb:49: syntax error, unexpected kENSURE, expecting $end):
+    39:     <td><%= @result.text %></td>
+    40:     <td><%= link_to 'Show', @result %></td>
+    41:     <td><%= link_to 'Edit', edit_message_path(@result) %></td>
+    42:     <td><%= link_to 'Destroy', @result, :confirm => 'Are you sure?', :method
+    43: => :delete %></td>
+    44:   </tr>
+    45: <% end %>
+  app/views/messages/index.html.erb:49:in `compile'
+  app/controllers/messages_controller.rb:7:in `index'
+
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.2ms)
+
+
+Started GET "/messages" for 127.0.0.1 at Thu Aug 04 18:59:38 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.0ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."name" = 'ñÉê∂%' LIMIT 1[0m
+ERROR: compiling _app_views_messages_index_html_erb__867076443_37768104_0 RAISED compile error
+c:/Sites/message-board/app/views/messages/index.html.erb:43: syntax error, unexpected '\n', expecting tASSOC
+Function body:           def _app_views_messages_index_html_erb__867076443_37768104_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "messages/index";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Listing messages</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+');@output_buffer.append_if_string=  @messages.each do |message| 
+@output_buffer.safe_concat('  <tr>
+    <td>');@output_buffer.append= ( message.name );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( message.text );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( link_to 'Show', message );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( link_to 'Edit', edit_message_path(message) );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete );@output_buffer.safe_concat('</td>
+  </tr>
+'); end 
+@output_buffer.safe_concat('</table>
+
+<br />
+
+');@output_buffer.append= ( link_to 'New Message', new_message_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+'); unless @result.nil? 
+@output_buffer.safe_concat('  <tr>
+    <td>');@output_buffer.append= ( @result.name );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( @result.text );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( link_to 'Show', @result );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( link_to 'Edit', edit_message_path(@result) );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( link_to 'Destroy', @result, :confirm => 'Are you sure?', :method
+=> :delete );@output_buffer.safe_concat('</td>
+  </tr>
+'); end 
+@output_buffer.safe_concat('</table>
+
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: c:/Sites/message-board/app/views/messages/index.html.erb:52:in `compile'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `_render_template'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+c:/Sites/message-board/app/controllers/messages_controller.rb:7:in `index'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `process_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:436:in `_run__912406087__process_action__199225275__callbacks'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `send'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `send'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `action'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `synchronize'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:77:in `send'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:13:in `run'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/server.rb:217:in `start'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/commands/server.rb:65:in `start'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:30
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:27:in `tap'
+c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered messages/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (compile error
+c:/Sites/message-board/app/views/messages/index.html.erb:43: syntax error, unexpected '\n', expecting tASSOC):
+    40:     <td><%= @result.text %></td>
+    41:     <td><%= link_to 'Show', @result %></td>
+    42:     <td><%= link_to 'Edit', edit_message_path(@result) %></td>
+    43:     <td><%= link_to 'Destroy', @result, :confirm => 'Are you sure?', :method
+    44: => :delete %></td>
+    45:   </tr>
+    46: <% end %>
+  app/views/messages/index.html.erb:52:in `compile'
+  app/controllers/messages_controller.rb:7:in `index'
+
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.6ms)
+
+
+Started GET "/messages" for 127.0.0.1 at Thu Aug 04 19:00:58 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.0ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."name" = 'ñÉê∂%' LIMIT 1[0m
+Rendered messages/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at Thu Aug 04 19:01:02 +0900 2011
+  Processing by MessagesController#new as HTML
+Rendered messages/_form.html.erb (62.5ms)
+Rendered messages/new.html.erb within layouts/application (78.1ms)
+Completed 200 OK in 94ms (Views: 93.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/messages" for 127.0.0.1 at Thu Aug 04 19:01:12 +0900 2011
+  Processing by MessagesController#create as HTML
+  Parameters: {"commit"=>"Create Message", "authenticity_token"=>"GoIykW7WNip9EI1gmb6F3PW4jpLeB5kKjBDa7ZPE6gg=", "utf8"=>"‚úì", "message"=>{"name"=>"È∫ªÁîü„ÄÄÂ§™ÈÉé", "text"=>"„ÉÜ„Çπ„Éà"}}
+  [1m[35mAREL (15.6ms)[0m  INSERT INTO "messages" ("created_at", "updated_at", "text", "name") VALUES ('2011-08-04 10:01:12.703125', '2011-08-04 10:01:12.703125', '„ÉÜ„Çπ„Éà', 'È∫ªÁîü„ÄÄÂ§™ÈÉé')
+Redirected to http://localhost:3000/messages/2
+Completed 302 Found in 188ms
+
+
+Started GET "/messages/2" for 127.0.0.1 at Thu Aug 04 19:01:12 +0900 2011
+  Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."id" = 2 LIMIT 1[0m
+Rendered messages/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/messages" for 127.0.0.1 at Thu Aug 04 19:01:15 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.0ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."name" = 'ñÉê∂%' LIMIT 1[0m
+Rendered messages/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/messages" for 127.0.0.1 at Thu Aug 04 19:04:26 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.0ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE (name like 'ñÉê∂%')[0m
+Rendered messages/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 31ms
+
+ActionView::Template::Error (undefined method `text' for []:ActiveRecord::Relation):
+    33: <% unless @result.nil? %>
+    34:   <tr>
+    35:     <td><%= @result.name %></td>
+    36:     <td><%= @result.text %></td>
+    37:   </tr>
+    38: <% end %>
+    39: </table>
+  app/views/messages/index.html.erb:36:in `_app_views_messages_index_html_erb__867076443_37788600_0'
+  app/controllers/messages_controller.rb:7:in `index'
+
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.6ms)
+
+
+Started GET "/messages" for 127.0.0.1 at Thu Aug 04 19:05:23 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.0ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT name, text FROM "messages" WHERE (name like 'ñÉê∂%')[0m
+Rendered messages/index.html.erb within layouts/application (31.2ms)
+Completed 500 Internal Server Error in 94ms
+
+ActionView::Template::Error (undefined method `text' for []:ActiveRecord::Relation):
+    33: <% unless @result.nil? %>
+    34:   <tr>
+    35:     <td><%= @result.name %></td>
+    36:     <td><%= @result.text %></td>
+    37:   </tr>
+    38: <% end %>
+    39: </table>
+  app/views/messages/index.html.erb:36:in `_app_views_messages_index_html_erb__867076443_37284120_0'
+  app/controllers/messages_controller.rb:7:in `index'
+
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (46.9ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (62.5ms)
+
+
+Started GET "/messages" for 127.0.0.1 at Thu Aug 04 19:07:09 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.0ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT name, text FROM "messages" WHERE (name like 'ñÉê∂%') LIMIT 1[0m
+Rendered messages/index.html.erb within layouts/application (15.6ms)
+Completed 500 Internal Server Error in 31ms
+
+ActionView::Template::Error (undefined local variable or method `text' for []:ActiveRecord::Relation):
+    33: <% unless @result.nil? %>
+    34:   <tr>
+    35:     <td><%= @result.name %></td>
+    36:     <td><%= @result.text %></td>
+    37:   </tr>
+    38: <% end %>
+    39: </table>
+  app/views/messages/index.html.erb:36:in `_app_views_messages_index_html_erb__867076443_38058660_0'
+  app/controllers/messages_controller.rb:7:in `index'
+
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.2ms)
+
+
+Started GET "/messages" for 127.0.0.1 at Thu Aug 04 19:08:37 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.0ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT name, text FROM "messages" WHERE (name like 'ñÉê∂%') LIMIT 1[0m
+Rendered messages/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/messages" for 127.0.0.1 at Fri Aug 05 10:20:21 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (15.6ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT name, text FROM "messages" WHERE (name like 'ñÉê∂%') LIMIT 1
+Rendered messages/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 266ms (Views: 93.8ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at Fri Aug 05 10:20:27 +0900 2011
+  Processing by MessagesController#new as HTML
+Rendered messages/_form.html.erb (62.5ms)
+Rendered messages/new.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 94ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/messages" for 127.0.0.1 at Fri Aug 05 10:20:38 +0900 2011
+  Processing by MessagesController#create as HTML
+  Parameters: {"commit"=>"Create Message", "authenticity_token"=>"MHeDQ0aDJDo/eTiG6+LNCX+qS77GKTrX4jt07nfqYTs=", "utf8"=>"‚úì", "message"=>{"name"=>"È∫ªÁîüÂ§™ÈÉé", "text"=>"„ÅÇ„ÅÑ„ÅÜ„Åà"}}
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "messages" ("text", "updated_at", "name", "created_at") VALUES ('Ç†Ç¢Ç§Ç¶', '2011-08-05 01:20:38.250000', 'ñÉê∂ëæòY', '2011-08-05 01:20:38.250000')
+Redirected to http://localhost:3000/messages/3
+Completed 302 Found in 234ms
+
+
+Started GET "/messages/3" for 127.0.0.1 at Fri Aug 05 10:20:38 +0900 2011
+  Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."id" = 3 LIMIT 1[0m
+Rendered messages/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 78ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/messages" for 127.0.0.1 at Fri Aug 05 10:20:40 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.0ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT name, text FROM "messages" WHERE (name like 'ñÉê∂%') LIMIT 1[0m
+Rendered messages/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/messsages" for 127.0.0.1 at Fri Aug 05 10:30:00 +0900 2011
+
+ActionController::RoutingError (No route matches "/messsages"):
+  
+
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/messages" for 127.0.0.1 at Fri Aug 05 10:30:09 +0900 2011
+
+ArgumentError (block not supplied):
+  app/controllers/messages_controller.rb:5
+
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (46.9ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/messages" for 127.0.0.1 at Fri Aug 05 10:37:45 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+Completed 500 Internal Server Error in 62ms
+
+TypeError (can't convert nil into String):
+  app/controllers/messages_controller.rb:15:in `initialize'
+  app/controllers/messages_controller.rb:15:in `new'
+  app/controllers/messages_controller.rb:15:in `index'
+  app/controllers/messages_controller.rb:14:in `each'
+  app/controllers/messages_controller.rb:14:in `index'
+
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/messages" for 127.0.0.1 at Fri Aug 05 10:40:24 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.0ms)[0m  SELECT "messages".* FROM "messages"
+Completed 500 Internal Server Error in 16ms
+
+TypeError (can't convert nil into String):
+  app/controllers/messages_controller.rb:16:in `initialize'
+  app/controllers/messages_controller.rb:16:in `new'
+  app/controllers/messages_controller.rb:16:in `index'
+  app/controllers/messages_controller.rb:14:in `each'
+  app/controllers/messages_controller.rb:14:in `index'
+
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/messages" for 127.0.0.1 at Fri Aug 05 10:41:15 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+Completed 500 Internal Server Error in 16ms
+
+TypeError (can't convert nil into String):
+  app/controllers/messages_controller.rb:16:in `initialize'
+  app/controllers/messages_controller.rb:16:in `new'
+  app/controllers/messages_controller.rb:16:in `index'
+  app/controllers/messages_controller.rb:14:in `each'
+  app/controllers/messages_controller.rb:14:in `index'
+
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+  [1m[36mSQL (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (62.5ms)[0m  [1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "text" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (78.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (78.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (78.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110802073713')
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/messages" for 127.0.0.1 at Fri Aug 05 10:50:23 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+Completed 500 Internal Server Error in 62ms
+
+TypeError (can't convert nil into String):
+  app/controllers/messages_controller.rb:13:in `initialize'
+  app/controllers/messages_controller.rb:13:in `new'
+  app/controllers/messages_controller.rb:13:in `index'
+
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/messages" for 127.0.0.1 at Fri Aug 05 10:50:43 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.0ms)[0m  SELECT "messages".* FROM "messages"
+Completed 500 Internal Server Error in 0ms
+
+TypeError (can't convert nil into String):
+  app/controllers/messages_controller.rb:13:in `initialize'
+  app/controllers/messages_controller.rb:13:in `new'
+  app/controllers/messages_controller.rb:13:in `index'
+
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/messages" for 127.0.0.1 at Fri Aug 05 10:57:50 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT name, text FROM "messages" WHERE (name like 'ñÉê∂%') LIMIT 1
+Rendered messages/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 94ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at Fri Aug 05 10:57:54 +0900 2011
+  Processing by MessagesController#new as HTML
+Rendered messages/_form.html.erb (15.6ms)
+Rendered messages/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/messages" for 127.0.0.1 at Fri Aug 05 10:58:00 +0900 2011
+  Processing by MessagesController#create as HTML
+  Parameters: {"commit"=>"Create Message", "authenticity_token"=>"MHeDQ0aDJDo/eTiG6+LNCX+qS77GKTrX4jt07nfqYTs=", "utf8"=>"‚úì", "message"=>{"name"=>"„ÅÇ„ÅÇ„ÅÇ", "text"=>"„ÉÜ„Çπ„ÉàÊº¢Â≠ó"}}
+Completed 500 Internal Server Error in 16ms
+
+TypeError (can't convert nil into String):
+  app/controllers/messages_controller.rb:68:in `initialize'
+  app/controllers/messages_controller.rb:68:in `new'
+  app/controllers/messages_controller.rb:68:in `create'
+
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started POST "/messages" for 127.0.0.1 at Fri Aug 05 11:00:05 +0900 2011
+  Processing by MessagesController#create as HTML
+  Parameters: {"commit"=>"Create Message", "authenticity_token"=>"MHeDQ0aDJDo/eTiG6+LNCX+qS77GKTrX4jt07nfqYTs=", "utf8"=>"‚úì", "message"=>{"name"=>"„ÅÇ„ÅÇ„ÅÇ", "text"=>"„ÉÜ„Çπ„ÉàÊº¢Â≠ó"}}
+Completed 500 Internal Server Error in 16ms
+
+TypeError (can't convert nil into String):
+  app/controllers/messages_controller.rb:67:in `initialize'
+  app/controllers/messages_controller.rb:67:in `new'
+  app/controllers/messages_controller.rb:67:in `create'
+
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started POST "/messages" for 127.0.0.1 at Fri Aug 05 11:00:54 +0900 2011
+  Processing by MessagesController#create as HTML
+  Parameters: {"commit"=>"Create Message", "authenticity_token"=>"MHeDQ0aDJDo/eTiG6+LNCX+qS77GKTrX4jt07nfqYTs=", "utf8"=>"‚úì", "message"=>{"name"=>"„ÅÇ„ÅÇ„ÅÇ", "text"=>"„ÉÜ„Çπ„ÉàÊº¢Â≠ó"}}
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "messages" ("text", "created_at", "name", "updated_at") VALUES ('$B%F%9%H4A;z(B', '2011-08-05 02:00:54.828125', '$B$"$"$"(B', '2011-08-05 02:00:54.828125')
+Redirected to http://localhost:3000/messages/1
+Completed 302 Found in 125ms
+
+
+Started GET "/messages/1" for 127.0.0.1 at Fri Aug 05 11:00:54 +0900 2011
+  Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."id" = 1 LIMIT 1[0m
+Rendered messages/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/messages" for 127.0.0.1 at Fri Aug 05 11:00:57 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.0ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT name, text FROM "messages" WHERE (name like 'ñÉê∂%') LIMIT 1[0m
+Rendered messages/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 78ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/messages/1" for 127.0.0.1 at Fri Aug 05 11:01:47 +0900 2011
+  Processing by MessagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MHeDQ0aDJDo/eTiG6+LNCX+qS77GKTrX4jt07nfqYTs=", "id"=>"1"}
+  [1m[35mMessage Load (0.0ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mDELETE FROM "messages" WHERE "messages"."id" = 1[0m
+Redirected to http://localhost:3000/messages
+Completed 302 Found in 125ms
+
+
+Started GET "/messages" for 127.0.0.1 at Fri Aug 05 11:01:48 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.0ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT name, text FROM "messages" WHERE (name like 'ñÉê∂%') LIMIT 1[0m
+Rendered messages/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/messages" for 127.0.0.1 at Fri Aug 05 11:03:04 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  [1m[35mMessage Load (0.0ms)[0m  SELECT name, text FROM "messages" WHERE (name like 'ñÉê∂%') LIMIT 1
+Rendered messages/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 78ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/messages/new" for 127.0.0.1 at Fri Aug 05 11:03:06 +0900 2011
+  Processing by MessagesController#new as HTML
+Rendered messages/_form.html.erb (0.0ms)
+Rendered messages/new.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/messages" for 127.0.0.1 at Fri Aug 05 11:03:17 +0900 2011
+  Processing by MessagesController#create as HTML
+  Parameters: {"commit"=>"Create Message", "authenticity_token"=>"MHeDQ0aDJDo/eTiG6+LNCX+qS77GKTrX4jt07nfqYTs=", "utf8"=>"‚úì", "message"=>{"name"=>"È∫ªÁîü„ÄÄÂ§™ÈÉé", "text"=>"„Åì„Çì„Å´„Å°„ÅØÔºÅ"}}
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "messages" ("text", "name", "updated_at", "created_at") VALUES ('$B$3$s$K$A$O!*(B', '$BKc@8!!B@O:(B', '2011-08-05 02:03:17.312500', '2011-08-05 02:03:17.312500')
+Redirected to http://localhost:3000/messages/2
+Completed 302 Found in 109ms
+
+
+Started GET "/messages/2" for 127.0.0.1 at Fri Aug 05 11:03:17 +0900 2011
+  Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."id" = 2 LIMIT 1[0m
+Rendered messages/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/messages" for 127.0.0.1 at Fri Aug 05 11:03:21 +0900 2011
+  Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.0ms)[0m  SELECT "messages".* FROM "messages"
+  [1m[36mMessage Load (0.0ms)[0m  [1mSELECT name, text FROM "messages" WHERE (name like 'ñÉê∂%') LIMIT 1[0m
+Rendered messages/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (234.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (281.3ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateMessages (20110802073713)
+  [1m[35mSQL (187.5ms)[0m  CREATE TABLE `messages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `text` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (78.1ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (171.9ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateMessages (20110802073713)
+  [1m[35mSQL (46.9ms)[0m  CREATE TABLE `messages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `text` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateMessages (20110802073713)
+  [1m[35mSQL (0.0ms)[0m  CREATE TABLE `messages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `text` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+Mysql2::Error: Table 'messages' already exists: CREATE TABLE `messages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `text` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE `messages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `text` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (62.5ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (156.2ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110802073713')[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateMessages (20110802073713)
+  [1m[35mSQL (15.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.0ms)[0m  [1mdescribe `messages`[0m
+  [1m[35mSQL (15.6ms)[0m  SHOW KEYS FROM `messages`
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/messages" for 127.0.0.1 at Fri Aug 05 11:48:48 +0900 2011
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at c:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/messages" for 127.0.0.1 at Fri Aug 05 11:51:19 +0900 2011

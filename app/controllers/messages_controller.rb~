@@ -1,0 +1,114 @@
+
+
+class MessagesController < ApplicationController
+require 'iconv'
+  # TODO
+  @db_enc = Kconv::SJIS
+  @view_enc = Kconv::UTF8
+
+  # GET /messages
+  # GET /messages.xml
+  def index
+    @messages = Message.all
+
+#    @messages.each do |message|
+#        message.text = Kconv.kconv(message.text, @view_enc, @db_enc)
+#        message.name = Kconv.kconv(message.name,  @view_enc, @db_enc)
+#    end
+    
+    @result =nil
+    #@result = Message.where('name like ?', '–ƒ¶%').select('name, text').first
+    
+    unless @result.nil?
+    @result.text = Kconv.kconv(@result.text, @view_enc, @db_enc)
+    @result.name = Kconv.kconv(@result.name,  @view_enc, @db_enc)
+    end
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @messages }
+    end
+  end
+
+  # GET /messages/1
+  # GET /messages/1.xml
+  def show
+    @message = Message.find(params[:id])
+    
+    @message.text = Kconv.kconv(@message.text, @view_enc, @db_enc)
+    @message.name = Kconv.kconv(@message.name, @view_enc, @db_enc)
+    
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @message }
+    end
+  end
+
+  # GET /messages/new
+  # GET /messages/new.xml
+  def new
+    @message = Message.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @message }
+    end
+  end
+
+  # GET /messages/1/edit
+  def edit
+    @message = Message.find(params[:id])
+  end
+
+  # POST /messages
+  # POST /messages.xml
+  def create
+    @message = Message.new(params[:message])
+    
+    @message.text = Kconv.kconv(@message.text, @db_enc, @view_enc)
+    @message.name = Kconv.kconv(@message.name, @db_enc, @view_enc)
+    
+    
+    respond_to do |format|
+      if @message.save
+        format.html { redirect_to(@message, :notice => 'Message was successfully created.') }
+        format.xml  { render :xml => @message, :status => :created, :location => @message }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @message.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /messages/1
+  # PUT /messages/1.xml
+  def update
+    @message = Message.find(params[:id])
+    
+    
+    @message.text = Kconv.kconv(@message.text, @db_enc, @view_enc)
+    @message.name = Kconv.kconv(@message.name, @db_enc, @view_enc)
+    
+    respond_to do |format|
+      if @message.update_attributes(params[:message])
+        format.html { redirect_to(@message, :notice => 'Message was successfully updated.') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @message.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /messages/1
+  # DELETE /messages/1.xml
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(messages_url) }
+      format.xml  { head :ok }
+    end
+  end
+end

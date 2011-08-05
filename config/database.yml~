@@ -8,12 +8,11 @@
 
 
 development:
-  adapter: mysql
+  adapter: mysql2
   host: 127.0.0.1
   username: root
   password: password
-  database: fat_free_crm
-  encoding: sjis
+  database: fat_free_crm 
   pool: 5
   timeout: 5000
 
