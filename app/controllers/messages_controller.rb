@@ -1,6 +1,18 @@
 class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.xml
+      before_filter :set_header
+    after_filter :set_charset
+
+def set_charset
+  content_type = response.headers["Content-Type"] || 'text/html'
+  response.headers["Content-Type"] = "#{content_type}; charset=#{Encoding.default_internal}" if content_type =~ /^text\//
+end
+
+def set_header
+  response.headers['Content-Type'] = 'text/html; #{Encoding.default_internal}'
+end
+  
   def index
     @messages = Message.all
 

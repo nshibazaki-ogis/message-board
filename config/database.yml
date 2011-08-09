@@ -13,7 +13,7 @@ development:
   username: root
   password: password
   database: fat_free_crm
-  encoding: utf8
+  encoding: cp932
   pool: 5
   timeout: 5000
 
