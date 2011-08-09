@@ -7,6 +7,9 @@ gem 'rake', '0.8.7'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
+
+gem 'mysql2', '< 0.3'
+
 group :development, :test do
   #gem 'sqlite3'
   #gem 'mysql2', '< 0.3'
