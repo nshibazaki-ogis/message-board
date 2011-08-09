@@ -8,7 +8,8 @@ gem 'rake', '0.8.7'
 
 
 
-gem 'mysql2', '< 0.3'
+#gem 'mysql2', '< 0.3'
+gem 'ruby-mysql'
 
 group :development, :test do
   #gem 'sqlite3'
