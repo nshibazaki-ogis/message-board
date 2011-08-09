@@ -1,0 +1,9 @@
+production:
+  adapter:   mysql
+  database:  fat_free_crm
+  username:  deploy
+  password:  password
+#  host:      localhost
+  host:      127.0.0.1
+  reconnect: true
+
