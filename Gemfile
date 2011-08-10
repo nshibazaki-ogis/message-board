@@ -9,7 +9,7 @@ gem 'rails', '3.0.3'
 
 # gem "mysql2", "0.2.6" # for windows. version 0.2.7 is not work.
 
-gem "mysql2", "0.2.6"
+gem "mysql2"
 
 # gem 'sqlite3'
 
