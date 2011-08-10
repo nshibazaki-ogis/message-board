@@ -7,13 +7,9 @@ gem 'rails', '3.0.3'
 
 # gem 'ruby-mysql'
 
-group :development, :test do
-  gem "mysql2", "0.2.6" # for windows. version 0.2.7 is not work.
-end
+# gem "mysql2", "0.2.6" # for windows. version 0.2.7 is not work.
 
-group :production do
-  gem "mysql2", "0.2.6" #for Rails < 3.1
-end
+gem "mysql2", "0.2.6"
 
 # gem 'sqlite3'
 
