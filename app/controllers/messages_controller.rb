@@ -1,9 +1,11 @@
+# coding: utf-8
+
 class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.xml
   def index
     @messages = Message.all
-    @result = Message.where('name like ?', '–ƒ¶%').select('name, text').first
+    @result = Message.where('name like ?', 'éº»ç”Ÿ%').select('name, text').first
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @messages }

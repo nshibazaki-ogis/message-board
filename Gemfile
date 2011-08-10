@@ -5,7 +5,15 @@ gem 'rails', '3.0.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'ruby-mysql'
+# gem 'ruby-mysql'
+
+group :development, :test do
+  gem "mysql2", "0.2.6" # for windows. version 0.2.7 is not work.
+end
+
+group :production do
+  gem "mysql2", "0.2.6" #for Rails < 3.1
+end
 
 # gem 'sqlite3'
 
