@@ -1,11 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
 one:
-  name: –ƒ¶ ‘¾˜Y
-  text: ‚±‚ñ‚É‚¿‚Í`
+  name: éº»ç”Ÿ å¤ªéƒ
+  text: ã“ã‚“ã«ã¡ã¯ï½
 
 two:
-  name: Äú±
-  text: ‚±‚Ìƒ`ƒFƒt\u309a‚Í\u{F0 A9 B8 BD}B
+  name: æŸ´ï¨‘
+  text: "ã“ã®ãƒã‚§ãƒ•\u309aã¯ ãƒ›ãƒƒã‚±ã€‚" + # \U00029E3D # \xF0\xA9\xB8\xBD # ğ©¸½
