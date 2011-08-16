@@ -1,9 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
 one:
-  name: MyString
-  text: MyString
+  name: 麻生 太郎
+  text: こんにちは～
 
 two:
-  name: MyString
-  text: MyString
+  name: 柴﨑
+  text: このチェフ\u309aは\u{F0 A9 B8 BD}。

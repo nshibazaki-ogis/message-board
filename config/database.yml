@@ -8,12 +8,22 @@
 #  timeout: 5000
 
 development:
-  adapter: mysql2
-  database: test
+  adapter: mysql
+  database: message
   username: root
   password: password
   host: localhost
   reconnect: true
+
+
+tweet:
+  adapter: mysql
+  database: tweet
+  username: root
+  password: password
+  host: localhost
+  reconnect: true
+
 
 
 # Warning: The database defined as "test" will be erased and
