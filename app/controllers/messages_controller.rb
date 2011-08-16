@@ -1,3 +1,5 @@
+# coding: euc-jp
+
 class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.xml
@@ -15,7 +17,7 @@ end
   
   def index
     @messages = Message.all
-
+    @result = Message.where('name like ?', 'ËãÀ¸%').select('name, text').first
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @messages }
