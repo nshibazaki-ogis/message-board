@@ -18,8 +18,8 @@ development:
   reconnect: true
 
 
-tweet:
-  adapter: mysql
+tweet_development:
+  adapter: mysql2
   database: tweet
   username: root
   password: password

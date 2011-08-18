@@ -1,0 +1,29 @@
+<h1>Tweet#index</h1>
+
+<p id="notice"><%= notice %></p>
+
+<b>What are you doing?</b><br />
+<%= render 'form' %>
+
+
+<h2> Tweets </h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Tweet</th>
+    <th></th>
+  </tr>
+
+<% @tweets.each do |tweet| %>
+  <tr>
+    <td><%= tweet.name %></td>
+    <td><%= tweet.tweet %></td>
+    <td><%= link_to 'Destroy', tweet, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<br />
+
+<%= link_to 'New Tweet', new_tweet_path %>

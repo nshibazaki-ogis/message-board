@@ -1,5 +1,11 @@
 MessageBoard::Application.routes.draw do
+
+  #get "tweet/index"
+
+  #get "tweet/new"
+
   resources :messages
+  resources :tweets, :only => ['index', 'new', 'create', 'destroy']
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
