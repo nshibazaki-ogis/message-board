@@ -10,9 +10,11 @@ gem 'rake', '0.8.7'
 
 # gem "mysql2", "0.2.6" # for windows. version 0.2.7 is not work.
 
-gem 'mysql2', '~> 0.2.7'
 
-# gem 'sqlite3'
+group :production do
+  gem 'mysql2', '~> 0.2.7'
+end
+gem 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
