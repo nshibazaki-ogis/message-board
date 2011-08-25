@@ -11,10 +11,10 @@ gem 'rake', '0.8.7'
 #gem 'mysql2', '< 0.3'
 gem 'ruby-mysql'
 
-group :development, :test do
+group :production do
   #gem 'sqlite3'
-  #gem 'mysql2', '< 0.3'
-  gem 'ruby-mysql'
+  gem 'mysql2', '~> 0.2.7'
+  #gem 'ruby-mysql'
   #gem 'mysql'
 
 end
