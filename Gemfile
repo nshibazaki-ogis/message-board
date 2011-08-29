@@ -6,13 +6,13 @@ gem 'rake', '0.8.7'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# gem 'ruby-mysql'
 
 # gem "mysql2", "0.2.6" # for windows. version 0.2.7 is not work.
 
 
 group :production do
-  gem 'mysql2', '~> 0.2.7'
+  gem 'ruby-mysql'
+#  gem 'mysql2', '~> 0.2.7'
 end
 gem 'sqlite3'
 
