@@ -13,9 +13,9 @@ gem 'rake', '0.8.7'
 
 #gem 'sqlite3'
 
-group :development, :test do
+#group :development, :test do
   gem 'mysql2', '~> 0.2.7'
-end
+#end
 
 
 
